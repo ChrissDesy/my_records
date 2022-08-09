@@ -3,7 +3,7 @@
     define('DB_HOST','localhost');
     define('DB_USER','root');
     define('DB_PASS','chris');
-    define('DB_NAME','paymentpro');
+    define('DB_NAME','myrecords');
 
     // Establish database connection.
     try

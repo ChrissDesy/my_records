@@ -134,7 +134,7 @@
             <h1>500</h1>
             <h2>Oops! An error occured</h2>
             <p>Sorry but the page you are looking for might not exist, had its name changed or is temporarily
-                unavailable.</p>
+                unavailable. Refer to the below error.</p>
             <p><?php echo $_SESSION['error']; $_SESSION['error'] = null; ?></p>
             <a href="./index.php">Try Again</a>
         </div>

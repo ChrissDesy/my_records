@@ -34,7 +34,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>PAYMENTS</b>PRO</a>
+    <a href="#"><b>My</b>RECORDS</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

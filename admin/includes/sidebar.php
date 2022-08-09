@@ -5,34 +5,34 @@
     $url = $_SERVER['PHP_SELF'];
 
     if(
-        $url == '/pop-mgnt/admin/new-item.php'
+        $url == '/my-records/admin/new-item.php'
     ){
         $showDrop = 'payments';
     }
     else if(
-        $url == '/pop-mgnt/admin/new-student.php' ||
-        $url == '/pop-mgnt/admin/edit-student.php' ||
-        $url == '/pop-mgnt/admin/students-list.php'
+        $url == '/my-records/admin/new-student.php' ||
+        $url == '/my-records/admin/edit-student.php' ||
+        $url == '/my-records/admin/students-list.php'
     ){
         $showDrop = 'students';
     }
     else if(
-        $url == '/pop-mgnt/admin/new-user.php' ||
-        $url == '/pop-mgnt/admin/edit-user.php' ||
-        $url == '/pop-mgnt/admin/users-list.php'
+        $url == '/my-records/admin/new-user.php' ||
+        $url == '/my-records/admin/edit-user.php' ||
+        $url == '/my-records/admin/users-list.php'
     ){
         $showDrop = 'users';
     }
     else if(
-        $url == '/pop-mgnt/admin/report1.php' ||
-        $url == '/pop-mgnt/admin/report2.php' ||
-        $url == '/pop-mgnt/admin/report3.php' ||
-        $url == '/pop-mgnt/admin/report4.php' 
+        $url == '/my-records/admin/report1.php' ||
+        $url == '/my-records/admin/report2.php' ||
+        $url == '/my-records/admin/report3.php' ||
+        $url == '/my-records/admin/report4.php' 
     ){
         $showDrop = 'reports';
     }
     else if(
-        $url == '/pop-mgnt/admin/change-password.php'
+        $url == '/my-records/admin/change-password.php'
     ){
         $showDrop = 'settings';
     }
@@ -42,12 +42,12 @@
 
 ?>
 
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
         <img src="../dist/img/AdminLTELogo.png" alt="Admin Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">PaymentsPRO</span>
+        <span class="brand-text font-weight-light">MyRECORDS</span>
     </a>
 
     <!-- Sidebar -->
@@ -68,7 +68,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/pop-mgnt/admin/index.php') echo 'active'; ?>">
+                    <a href="index.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/index.php') echo 'active'; ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -85,13 +85,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="new-student.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/pop-mgnt/admin/new-student.php') echo 'active'; ?>">
+                            <a href="new-student.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/new-student.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>New Student</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="students-list.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/pop-mgnt/admin/students-list.php') echo 'active'; ?>">
+                            <a href="students-list.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/students-list.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Students</p>
                             </a>
@@ -108,25 +108,25 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="report1.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/pop-mgnt/admin/report1.php') echo 'active'; ?>">
+                            <a href="report1.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/report1.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Funds Balances</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="report2.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/pop-mgnt/admin/report2.php') echo 'active'; ?>">
+                            <a href="report2.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/report2.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Verified</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="report3.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/pop-mgnt/admin/report3.php') echo 'active'; ?>">
+                            <a href="report3.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/report3.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Denied</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="report4.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/pop-mgnt/admin/report4.php') echo 'active'; ?>">
+                            <a href="report4.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/report4.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Student Report</p>
                             </a>
@@ -143,13 +143,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="new-user.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/pop-mgnt/admin/new-user.php') echo 'active'; ?>">
+                            <a href="new-user.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/new-user.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>New User</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="users-list.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/pop-mgnt/admin/users-list.php') echo 'active'; ?>">
+                            <a href="users-list.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/users-list.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Users</p>
                             </a>
@@ -166,7 +166,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./change-password.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/pop-mgnt/admin/change-password.php') echo 'active'; ?>"">
+                            <a href="./change-password.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/change-password.php') echo 'active'; ?>"">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Change Password</p>
                             </a>
