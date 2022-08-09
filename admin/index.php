@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Favicon -->
   <link rel="shortcut icon" href="../dist/img/AdminLTELogo.png"/>
 
-  <title>Payments | Home</title>
+  <title>MyRECORDS | Home</title>
 
   <?php include('./includes/styles.php'); ?>
   
@@ -68,7 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <span class="info-box-icon bg-info elevation-1"><i class="fas fa-inbox"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">New Payments</span>
+                                <span class="info-box-text">New MyRECORDS</span>
                                 <span class="info-box-number">
                                     <?php echo 10; ?>
                                 </span>
@@ -132,7 +132,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <!-- TABLE: LATEST ORDERS -->
                             <div class="card">
                             <div class="card-header border-transparent">
-                                <h3 class="card-title">Latest Payments</h3>
+                                <h3 class="card-title">Latest MyRECORDS</h3>
 
                                 <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-widget="collapse">

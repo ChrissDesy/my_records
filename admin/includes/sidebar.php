@@ -32,7 +32,13 @@
 
 ?>
 
-<aside class="main-sidebar sidebar-light-primary elevation-4">
+<style>
+    .nav-treeview > .nav-item > a.nav-link.active {
+        border-right: 5px solid lightgreen !important;
+    }
+</style>
+
+<aside class="main-sidebar sidebar-light-success elevation-4">
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
         <img src="../dist/img/AdminLTELogo.png" alt="Admin Logo" class="brand-image img-circle elevation-3"
@@ -65,60 +71,49 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview <?php if($showDrop == 'students') echo 'menu-open'; ?>">
-                    <a href="#" class="nav-link <?php if($showDrop == 'students') echo 'active'; ?>">
-                        <i class="nav-icon fas fa-user-graduate"></i>
+                <li class="nav-item has-treeview <?php if($showDrop == 'records') echo 'menu-open'; ?>">
+                    <a href="#" class="nav-link <?php if($showDrop == 'records') echo 'active'; ?>">
+                        <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
-                            Students
+                            Records
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="new-student.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/new-student.php') echo 'active'; ?>">
+                            <a href="congregations.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/congregations.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>New Student</p>
+                                <p>Congregations</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="students-list.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/students-list.php') echo 'active'; ?>">
+                            <a href="funders.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/funders.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>All Students</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview <?php if($showDrop == 'reports') echo 'menu-open'; ?>">
-                    <a href="#" class="nav-link <?php if($showDrop == 'reports') echo 'active'; ?>">
-                        <i class="nav-icon fas fa-chart-area"></i>
-                        <p>
-                            Reports
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="report1.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/report1.php') echo 'active'; ?>">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Funds Balances</p>
+                                <p>Funders</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="report2.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/report2.php') echo 'active'; ?>">
+                            <a href="missions.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/missions.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Verified</p>
+                                <p>Missions</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="report3.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/report3.php') echo 'active'; ?>">
+                            <a href="priests.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/priests.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Denied</p>
+                                <p>Priests</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="report4.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/report4.php') echo 'active'; ?>">
+                            <a href="projects.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/projects.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Student Report</p>
+                                <p>Projects</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="seminarians.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/seminarians.php') echo 'active'; ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Seminarians</p>
                             </a>
                         </li>
                     </ul>
