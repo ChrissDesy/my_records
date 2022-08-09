@@ -65,10 +65,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row">
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box">
-                            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-inbox"></i></span>
+                            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user-tie"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">New MyRECORDS</span>
+                                <span class="info-box-text">Priests</span>
                                 <span class="info-box-number">
                                     <?php echo 10; ?>
                                 </span>
@@ -84,10 +84,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
-                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money-check"></i></span>
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Verified</span>
+                                <span class="info-box-text">Congregations</span>
                                 <span class="info-box-number"><?php echo 7; ?></span>
                             </div>
                             <!-- /.info-box-content -->
@@ -97,10 +97,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- /.col -->
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
-                            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-calendar-times"></i></span>
+                            <span class="info-box-icon bg-purple elevation-1"><i class="fas fa-church"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Denied</span>
+                                <span class="info-box-text">Missions</span>
                                 <span class="info-box-number"><?php echo 9; ?></span>
                             </div>
                             <!-- /.info-box-content -->
@@ -111,10 +111,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
-                            <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-user-graduate"></i></span>
+                            <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-project-diagram"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Students</span>
+                                <span class="info-box-text">Projects</span>
                                 <span class="info-box-number"><?php echo 20; ?></span>
                             </div>
                             <!-- /.info-box-content -->
@@ -128,11 +128,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Main row -->
                     <div class="row">
                         <!-- col -->
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <!-- TABLE: LATEST ORDERS -->
                             <div class="card">
                             <div class="card-header border-transparent">
-                                <h3 class="card-title">Latest MyRECORDS</h3>
+                                <h3 class="card-title">Latest Letters</h3>
 
                                 <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-widget="collapse">
@@ -149,24 +149,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <table class="table m-0">
                                         <thead>
                                             <tr>
-                                                <th>Student</th>
-                                                <th>Registration</th>
-                                                <th>Amount</th>
-                                                <th>Date&nbsp;Paid</th>
-                                                <th>Term - Year</th>
-                                                <th>Method</th>
+                                                <th>Title</th>
+                                                <th>Date&nbsp;Received</th>
+                                                <th>File</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><?php echo 'Chriss Desy' ?></td>
-                                                <td><?php echo 'A1234' ?></td>
-                                                <td><?php echo 'USD$100' ?></td>
-                                                <td><?php echo '2022-07-09' ?></td>
-                                                <td><?php echo '2 - 2022' ?></td>
-                                                <td><?php echo 'ECOCASH' ?></td>
-                                            </tr>
-                                        </tbody>
+                                        <tbody></tbody>
                                     </table>
                                 </div>
                                 <!-- /.table-responsive -->
@@ -176,7 +164,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!-- <a href="./new-item.php" class="btn btn-sm btn-outline-info float-left">
                                     <i class="fas fa-plus mr-2"></i> View New
                                 </a> -->
-                                <a href="./new-item.php" class="btn btn-sm btn-outline-secondary float-right">
+                                <a href="./letters.php" class="btn btn-sm btn-outline-secondary float-right">
+                                    <i class="fas fa-list-ul mr-2"></i> View All
+                                </a>
+                            </div>
+                            <!-- /.card-footer -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <div class="col-md-6">
+                            <!-- TABLE: LATEST ORDERS -->
+                            <div class="card">
+                            <div class="card-header border-transparent">
+                                <h3 class="card-title">Upcoming Conferences</h3>
+
+                                <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-widget="remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                                </div>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table m-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer clearfix">
+                                <!-- <a href="./new-item.php" class="btn btn-sm btn-outline-info float-left">
+                                    <i class="fas fa-plus mr-2"></i> View New
+                                </a> -->
+                                <a href="./conferences.php" class="btn btn-sm btn-outline-secondary float-right">
                                     <i class="fas fa-list-ul mr-2"></i> View All
                                 </a>
                             </div>
