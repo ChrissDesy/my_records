@@ -5,16 +5,14 @@
     $url = $_SERVER['PHP_SELF'];
 
     if(
-        $url == '/my-records/admin/new-item.php'
+        $url == '/my-records/admin/congregations.php' ||
+        $url == '/my-records/admin/funders.php' ||
+        $url == '/my-records/admin/missions.php' ||
+        $url == '/my-records/admin/priests.php' ||
+        $url == '/my-records/admin/projects.php' ||
+        $url == '/my-records/admin/seminarians.php'
     ){
-        $showDrop = 'payments';
-    }
-    else if(
-        $url == '/my-records/admin/new-student.php' ||
-        $url == '/my-records/admin/edit-student.php' ||
-        $url == '/my-records/admin/students-list.php'
-    ){
-        $showDrop = 'students';
+        $showDrop = 'records';
     }
     else if(
         $url == '/my-records/admin/new-user.php' ||
@@ -22,14 +20,6 @@
         $url == '/my-records/admin/users-list.php'
     ){
         $showDrop = 'users';
-    }
-    else if(
-        $url == '/my-records/admin/report1.php' ||
-        $url == '/my-records/admin/report2.php' ||
-        $url == '/my-records/admin/report3.php' ||
-        $url == '/my-records/admin/report4.php' 
-    ){
-        $showDrop = 'reports';
     }
     else if(
         $url == '/my-records/admin/change-password.php'
