@@ -134,7 +134,7 @@ CREATE TABLE `projects` (
   `title` varchar(45) DEFAULT NULL,
   `responsible` varchar(95) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,6 +143,7 @@ CREATE TABLE `projects` (
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
+INSERT INTO `projects` VALUES (1,'First Project','Chriss Desy');
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,7 +205,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'cdesy','Chriss','Desmonds','Male','chris@luminsoft.com','4000000','2021-11-23','Admin','qwerty','906907','active');
+INSERT INTO `users` VALUES (1,'cdesy','Chriss','Desmond','Male','chris@luminsoft.com','4000000','2021-11-23','Admin','qwerty','906907','active');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -217,4 +218,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-09 12:33:27
+-- Dump completed on 2022-08-10 11:01:14
