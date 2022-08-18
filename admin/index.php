@@ -1,13 +1,13 @@
 <?php
 
     session_start();
-    //include('./includes/dbcon.php');
+    include('./includes/dbcon.php');
 
     if(!isset($_SESSION['username'])){
         echo "<script type='text/javascript'> document.location ='./controllers/logout.php'; </script>";
     }
 
-    // include('./controllers/homeCon.php');
+    include('./controllers/homeCon.php');
 
 ?>
 
@@ -70,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="info-box-content">
                                 <span class="info-box-text">Priests</span>
                                 <span class="info-box-number">
-                                    <?php echo 10; ?>
+                                    <?php echo $stats[0]['priests']; ?>
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -88,7 +88,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Congregations</span>
-                                <span class="info-box-number"><?php echo 7; ?></span>
+                                <span class="info-box-number"><?php echo $stats[0]['congs']; ?></span>
                             </div>
                             <!-- /.info-box-content -->
                             </div>
@@ -101,7 +101,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Missions</span>
-                                <span class="info-box-number"><?php echo 9; ?></span>
+                                <span class="info-box-number"><?php echo $stats[0]['missions']; ?></span>
                             </div>
                             <!-- /.info-box-content -->
                             </div>
@@ -115,7 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Projects</span>
-                                <span class="info-box-number"><?php echo 20; ?></span>
+                                <span class="info-box-number"><?php echo $stats[0]['proj']; ?></span>
                             </div>
                             <!-- /.info-box-content -->
                             </div>
