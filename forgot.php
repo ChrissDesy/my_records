@@ -1,15 +1,15 @@
 <?php 
 
 //   session_start();
-//   include('./admin/includes/dbcon.php');
+  include('./admin/includes/dbcon.php');
 
-  $mode = 'reset';
+  (!isset($mode)) ? $mode = 'reset' : '' ;
 
 //   if($_SESSION['username'] ?? '' != ''){
 //     echo "<script type='text/javascript'> document.location ='./admin/index.php'; </script>";
 //   }
 
-//   include('./admin/controllers/userLogin.php');
+  include('./admin/controllers/userLogin.php');
 
 ?>
 
@@ -49,10 +49,19 @@
           <br>
         <?php } ?>
 
+        <?php
+            if($_SESSION['successMessage'] ?? "" != ""){
+        ?>
+          <div class="text-success text-center">
+              <?php echo $_SESSION['successMessage']; $_SESSION['successMessage'] = null; ?>
+          </div>
+          <br>
+        <?php } ?>
+
 
         <!-- Reset Logic -->
 
-        <?php if($mode == "reset"){ ?>
+        <?php if($mode != "change"){ ?>
             <div>
                 <form method="post">
                     <div class="input-group mb-3">
@@ -62,14 +71,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-4">
-                            <!-- <div class="icheck-primary">
-                        <input type="checkbox" id="remember">
-                        <label for="remember">
-                            Remember Me
-                        </label>
-                        </div> -->
-                        </div>
+                        <div class="col-4"></div>
                         <!-- /.col -->
                         <div class="col-8">
                             <button type="submit" name="reset" class="btn btn-sm btn-primary btn-block btn-flat">Reset
@@ -78,15 +80,19 @@
                         <!-- /.col -->
                     </div>
                 </form>
+                <p class="mb-1 mt-4">
+                    <a href="./index.php">Go to Login</a>
+                </p>
             </div>
         <?php } else { ?>
             <div>
-                <form method="post">
+            <form method="post">
                     <div class="input-group mb-3">
                         <input type="password" required name="password" class="form-control" placeholder="Password">
                         <div class="input-group-append input-group-text">
                             <span class="fas fa-lock"></span>
                         </div>
+                        <input type="text" name="uname" value="<?php echo $uname; ?>" hidden>
                     </div>
                     <div class="input-group mb-3">
                         <input type="password" required name="password2" class="form-control" placeholder="Confirm Password">
@@ -96,12 +102,6 @@
                     </div>
                     <div class="row">
                         <div class="col-4">
-                            <!-- <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">
-                                    Remember Me
-                                </label>
-                            </div> -->
                         </div>
                         <!-- /.col -->
                         <div class="col-8">

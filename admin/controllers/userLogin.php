@@ -7,33 +7,28 @@
         if($pass && $uname)
         {   
 
-            //get employees
-            // $sql = "SELECT * FROM users WHERE username='".$uname."' AND password='".$pass."'";
-            // $statement = $db->prepare($sql);
-            // $statement->execute();
-            // $result = $statement->fetchAll();
+            // get employees
+            $sql = "SELECT * FROM users WHERE username='".$uname."' AND password='".$pass."'";
+            $statement = $db->prepare($sql);
+            $statement->execute();
+            $result = $statement->fetchAll();
 
-            // if(sizeof($result) > 0){
-            //     $r = $result[0];
+            if(sizeof($result) > 0){
+                $r = $result[0];
                 
-            //     if($r['status'] == 'active'){
-            //         $_SESSION['username'] = $r['firstname']. ' '. $r['lastname'];
-            //         $_SESSION['uname'] = $r['username'];
+                if($r['status'] == 'active'){
+                    $_SESSION['username'] = $r['firstname']. ' '. $r['lastname'];
+                    $_SESSION['uname'] = $r['username'];
                 
-            //         header("location:./admin/index.php");
-            //     }
-            //     else{
-            //         $_SESSION['errorMessage'] = 'Account Disabled or Deleted';
-            //     }
-            // }
-            // else{
-            //     $_SESSION['errorMessage'] = 'Invalid Credentials';
-            // }
-
-            $_SESSION['username'] = $uname;
-            $_SESSION['uname'] = $uname;
-        
-            header("location:./admin/index.php");
+                    header("location:./admin/index.php");
+                }
+                else{
+                    $_SESSION['errorMessage'] = 'Account Disabled or Deleted';
+                }
+            }
+            else{
+                $_SESSION['errorMessage'] = 'Invalid Credentials';
+            }
 
         }
         else
@@ -62,6 +57,7 @@
                     $_SESSION['uname'] = $r['username'];
                 
                     $mode = 'change';
+                    $uname = $uname;
                 }
                 else{
                     $_SESSION['errorMessage'] = 'Account Disabled or Deleted';
@@ -75,6 +71,33 @@
         else
         {
             $_SESSION['errorMessage'] = 'Enter Username.';
+        }
+    }
+
+    if(isset($_POST['change']))
+    {
+        $uname = $_POST['uname'];
+        $pwd = $_POST['password'];
+        $pwd2 = $_POST['password2'];
+    
+        if($pwd == $pwd2)
+        {   
+
+            $sql2 = 'UPDATE users SET
+                        password = "'.$pwd.'"
+                    WHERE username = "'.$uname.'"';
+	    
+            $query2 = $db->prepare($sql2);   
+            $query2->execute();
+
+            $_SESSION['successMessage'] = 'Password changed.';
+
+            // header("location:./index.php");
+
+        }
+        else
+        {
+            $_SESSION['errorMessage'] = 'Passwords Mismatch.';
         }
     }
 
