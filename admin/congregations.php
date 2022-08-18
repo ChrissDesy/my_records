@@ -2,17 +2,25 @@
 
     session_start();
     include('./includes/dbcon.php');
-    // include('./controllers/congregationCon.php');
+    include('./controllers/congregationsCon.php');
 
     if(!isset($_SESSION['username'])){
         echo "<script type='text/javascript'> document.location ='./controllers/logout.php'; </script>";
     }
 
     //get employees
-    $sql = "SELECT * FROM congregations";
+    $sql = "SELECT 
+                c.id, c.name, location, apstulace, community, priest, CONCAT(p.name, ' ', p.surname) AS pname 
+            FROM congregations AS c
+            INNER JOIN priests AS p ON c.priest = p.id";
     $statement = $db->prepare($sql);
     $statement->execute();
     $result = $statement->fetchAll();
+
+    $sql2 = "SELECT * FROM priests";
+    $statement2 = $db->prepare($sql2);
+    $statement2->execute();
+    $result2 = $statement2->fetchAll();
 
     // echo $result;
 
@@ -74,7 +82,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="row">
                                 <div class="col-md-6"><h3 class="card-title">List of Congregations</h3></div>
                                 <div class="col-md-6 text-right">
-                                    <button  class="btn btn-sm btn-outline-primary">
+                                    <button data-target="#add" data-toggle="modal" class="btn btn-sm btn-outline-primary">
                                         <i class="fa fa-plus"></i>&nbsp;&nbsp;Add
                                     </button>
                                 </div>
@@ -89,7 +97,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <th>Reference</th>
                                             <th>Name</th>
                                             <th>Location</th>
-                                            <th>Apstulace</th>
+                                            <th>Apostolace</th>
                                             <th>Community</th>
                                             <th>Priest</th>
                                             <th>Action</th>
@@ -104,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <td><?php echo $r['location']; ?></td>
                                                 <td><?php echo $r['apstulace']; ?></td>
                                                 <td><?php echo $r['community']; ?></td>
-                                                <td><?php echo $r['priest']; ?></td>
+                                                <td><?php echo $r['pname']; ?></td>
                                                 <td>
                                                     <span class="text-warning mr-3" data-target="#edit" data-toggle="modal" data-myid="<?php echo $r['id']; ?>">
                                                         <i class="fa fa-edit"></i>
@@ -133,6 +141,131 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     </div>
     <!-- ./wrapper -->
+
+    <div class="modal fade" id="add">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Record</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    Name
+                                    <input type="text" name="name" required placeholder="Name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    Location
+                                    <input type="text" name="location" required placeholder="Location" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    Apostolace
+                                    <input type="text" name="apstolace" required placeholder="Apostolace" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    Community
+                                    <input type="text" name="community" required placeholder="Community" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    Priest
+                                    <select name="priest" class="form-control" required>
+                                        <option value="" selected disabled>choose...</option>
+                                        <?php foreach ($result2 as $r) { ?>
+                                            <option value="<?php echo $r['id']; ?>"><?php echo $r['name']. ' '. $r['surname']; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="text-center">
+                            <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <button class="btn btn-sm btn-primary" type="submit" name="addRec" class="form-control">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal fade" id="edit">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Update Record</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post">
+                        <div class="row">
+                            <div hidden>
+                                <input type="text" name="id" id="eId">
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    Name
+                                    <input type="text" name="name" id="ename" required placeholder="Name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    Location
+                                    <input type="text" name="location" id="elocation" required placeholder="Location" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    Apostolace
+                                    <input type="text" name="apstolace" id="eapost" required placeholder="Apostolace" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    Community
+                                    <input type="text" name="community" id="ecomm" required placeholder="Community" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    Priest
+                                    <select name="priest" id="epriest" class="form-control" required>
+                                        <option value="" selected disabled>choose...</option>
+                                        <?php foreach ($result2 as $r) { ?>
+                                            <option value="<?php echo $r['id']; ?>"><?php echo $r['name']. ' '. $r['surname']; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="text-center">
+                            <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <button class="btn btn-sm btn-primary" type="submit" name="editRec" class="form-control">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
 
     <div class="modal fade" id="delete">
         <div class="modal-dialog">
@@ -166,8 +299,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <?php include('./includes/javascripts.php'); ?>
 
     <script>
+        let data;
+
         $(function () {
             $("#example1").DataTable();
+
+            data = <?php echo json_encode($result); ?>;
         });
 
         $("#delete").on('show.bs.modal', function (e) {
@@ -177,6 +314,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
             // console.log(obj);
 			$('#myId2').val(Id);
         });
+
+        $("#edit").on('show.bs.modal', function (e) {
+            
+            var Id = $(e.relatedTarget).data('myid');
+
+            // console.log(obj);
+			$('#eId').val(Id);
+            let info;
+            data.forEach(r => {
+                if(r.id == Id){
+                    info = r;
+                }
+            });
+
+            console.log(info);
+
+            $('#ename').val(info.name);
+            $('#elocation').val(info.location);
+            $('#eapost').val(info.apstulace);
+            $('#ecomm').val(info.community);
+            $('#epriest').val(info.priest);
+
+        });
+
     </script>
     
 </body>
