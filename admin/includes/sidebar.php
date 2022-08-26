@@ -10,6 +10,7 @@
         $url == '/my-records/admin/missions.php' ||
         $url == '/my-records/admin/priests.php' ||
         $url == '/my-records/admin/projects.php' ||
+        $url == '/my-records/admin/xconferences.php' ||
         $url == '/my-records/admin/seminarians.php'
     ){
         $showDrop = 'records';
@@ -80,6 +81,12 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="xconferences.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/xconferences.php') echo 'active'; ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Conferences</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="congregations.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/congregations.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>

@@ -125,11 +125,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                User Role
+                                                User Type
                                                 <select name="role" required class="form-control">
                                                     <option value="" selected disabled>choose...</option>
-                                                    <option value="Admin">Admin</option>
-                                                    <option value="Clerk">Clerk</option>
+                                                    <option value="Admin">System Admin</option>
+                                                    <option value="Secretary">Secretary</option>
+                                                    <option value="Chancellor">Chancellor</option>
+                                                    <option value="Bishop">Bishop</option>
                                                 </select>
                                             </div>
                                         </div>

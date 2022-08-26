@@ -193,11 +193,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <table class="table m-0">
                                         <thead>
                                             <tr>
-                                                <th>Title</th>
+                                                <th>Name</th>
+                                                <th>Location</th>
                                                 <th>Date</th>
                                             </tr>
                                         </thead>
-                                        <tbody></tbody>
+                                        <tbody>
+                                            <?php foreach ($confs as $r) {
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $r['name']; ?></td>
+                                                    <td><?php echo $r['location']; ?></td>
+                                                    <td><?php echo $r['date']; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
                                     </table>
                                 </div>
                                 <!-- /.table-responsive -->
@@ -207,7 +217,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!-- <a href="./new-item.php" class="btn btn-sm btn-outline-info float-left">
                                     <i class="fas fa-plus mr-2"></i> View New
                                 </a> -->
-                                <a href="./conferences.php" class="btn btn-sm btn-outline-secondary float-right">
+                                <a href="./xconferences.php" class="btn btn-sm btn-outline-secondary float-right">
                                     <i class="fas fa-list-ul mr-2"></i> View All
                                 </a>
                             </div>
