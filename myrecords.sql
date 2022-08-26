@@ -16,6 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `conferences`
+--
+
+DROP TABLE IF EXISTS `conferences`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `conferences` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(95) DEFAULT NULL,
+  `location` varchar(95) DEFAULT NULL,
+  `date` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `conferences`
+--
+
+LOCK TABLES `conferences` WRITE;
+/*!40000 ALTER TABLE `conferences` DISABLE KEYS */;
+INSERT INTO `conferences` VALUES (1,'Event 1','Lwendulu','2022-08-20'),(2,'test edit','test ed','2022-08-31');
+/*!40000 ALTER TABLE `conferences` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `congregations`
 --
 
@@ -30,7 +56,7 @@ CREATE TABLE `congregations` (
   `community` varchar(95) DEFAULT NULL,
   `priest` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +65,7 @@ CREATE TABLE `congregations` (
 
 LOCK TABLES `congregations` WRITE;
 /*!40000 ALTER TABLE `congregations` DISABLE KEYS */;
+INSERT INTO `congregations` VALUES (1,'Number 1','Hwange','test edited','Lwendulu',1);
 /*!40000 ALTER TABLE `congregations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,7 +83,7 @@ CREATE TABLE `funders` (
   `term` varchar(45) DEFAULT NULL,
   `location` varchar(95) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +92,35 @@ CREATE TABLE `funders` (
 
 LOCK TABLES `funders` WRITE;
 /*!40000 ALTER TABLE `funders` DISABLE KEYS */;
+INSERT INTO `funders` VALUES (1,'Chriss waLah',1,'3 Months','Hwange');
 /*!40000 ALTER TABLE `funders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `letters`
+--
+
+DROP TABLE IF EXISTS `letters`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `letters` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `date` varchar(45) DEFAULT NULL,
+  `fname` varchar(95) DEFAULT NULL,
+  `from` varchar(75) DEFAULT NULL,
+  `title` varchar(95) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `letters`
+--
+
+LOCK TABLES `letters` WRITE;
+/*!40000 ALTER TABLE `letters` DISABLE KEYS */;
+INSERT INTO `letters` VALUES (3,'2022-08-25','uploads/sample.pdf','Chriss','The Project');
+/*!40000 ALTER TABLE `letters` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -82,7 +137,7 @@ CREATE TABLE `missions` (
   `priest` int NOT NULL,
   `status` varchar(45) DEFAULT 'active',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,6 +146,7 @@ CREATE TABLE `missions` (
 
 LOCK TABLES `missions` WRITE;
 /*!40000 ALTER TABLE `missions` DISABLE KEYS */;
+INSERT INTO `missions` VALUES (1,'St. Chriss','Harare',1,'active');
 /*!40000 ALTER TABLE `missions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +166,7 @@ CREATE TABLE `priests` (
   `confirmation` varchar(45) DEFAULT NULL,
   `ordination` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,6 +175,7 @@ CREATE TABLE `priests` (
 
 LOCK TABLES `priests` WRITE;
 /*!40000 ALTER TABLE `priests` DISABLE KEYS */;
+INSERT INTO `priests` VALUES (1,'Test','Testing','2007-11-24','1994-12-13','confirm','2019-12-02');
 /*!40000 ALTER TABLE `priests` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +200,7 @@ CREATE TABLE `projects` (
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
-INSERT INTO `projects` VALUES (1,'First Project','Chriss Desy');
+INSERT INTO `projects` VALUES (1,'First Project','Autie Mudimba');
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +218,7 @@ CREATE TABLE `seminarians` (
   `dob` varchar(45) DEFAULT NULL,
   `education` varchar(450) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -170,6 +227,7 @@ CREATE TABLE `seminarians` (
 
 LOCK TABLES `seminarians` WRITE;
 /*!40000 ALTER TABLE `seminarians` DISABLE KEYS */;
+INSERT INTO `seminarians` VALUES (1,'Kim','Mutasa','2002-05-23','Educ 1,\r\nEduc 2,\r\n and another one.');
 /*!40000 ALTER TABLE `seminarians` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,7 +263,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'cdesy','Chriss','Desmond','Male','chris@luminsoft.com','4000000','2021-11-23','Admin','qwerty','906907','active');
+INSERT INTO `users` VALUES (1,'cdesy','Chriss','Desmond','Male','chris@luminsoft.com','4000000','2021-11-23','Admin','1234','906907','active');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -218,4 +276,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-10 11:01:14
+-- Dump completed on 2022-08-26 13:58:09
