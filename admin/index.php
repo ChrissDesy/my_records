@@ -154,7 +154,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <th>File</th>
                                             </tr>
                                         </thead>
-                                        <tbody></tbody>
+                                        <tbody>
+                                            <?php foreach ($letters as $r) {
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $r['from']; ?></td>
+                                                    <td><?php echo $r['title']; ?></td>
+                                                    <td>
+                                                        <a target="_blank" class="text-primary" href="./<?php echo $r['fname']; ?>">
+                                                            <i class="fa fa-file-download"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
                                     </table>
                                 </div>
                                 <!-- /.table-responsive -->

@@ -11,6 +11,7 @@
         $url == '/my-records/admin/priests.php' ||
         $url == '/my-records/admin/projects.php' ||
         $url == '/my-records/admin/xconferences.php' ||
+        $url == '/my-records/admin/letters.php' ||
         $url == '/my-records/admin/seminarians.php'
     ){
         $showDrop = 'records';
@@ -85,6 +86,12 @@
                             <a href="xconferences.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/xconferences.php') echo 'active'; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Conferences</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="letters.php" class="nav-link <?php if($_SERVER['PHP_SELF'] == '/my-records/admin/letters.php') echo 'active'; ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pope`s Letters</p>
                             </a>
                         </li>
                         <li class="nav-item">
